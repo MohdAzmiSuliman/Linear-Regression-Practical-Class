@@ -1,0 +1,49 @@
+---
+title: "Linear Regression Practical Class"
+author: "Mohd Azmi"
+date: "19/10/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pre-requisite (Pre-amble)
+
+## Library
+
+Load necessary library
+
+Library foreign and have to import dataset
+
+```{r}
+library(foreign)
+library(haven)
+```
+
+# Practical Session
+
+## Load data
+
+dataset datamssm_a.dta was imported to environement, and named as DataSet01
+
+```{r}
+
+DataSet01 <- read_dta("datamssm_a.dta")
+
+```
+
+## Linear Regression for Model 1
+
+univariable, simple linear regression for model 1, named as Model01
+
+```{r}
+Model01 <- lm(hba1c ~ ldl, data = DataSet01)
+summary(Model01)
+```
+\[ y = \beta_0 + \beta_1X_1 + \epsilon ]
+
+
